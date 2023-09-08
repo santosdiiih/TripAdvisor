@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.DetailsTravelActivity"
+    android:orientation="vertical"
+    android:background="@color/blue_ligth">
+
+    <include layout="@layout/toolbar"/>
+
+
+        <TextView
+            android:id="@+id/textTitleCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dados Da Viagem"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Data De Ida:"
+                android:textSize="20sp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/dateGo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="29/08/2023"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Data De Volta:"
+                android:textSize="20sp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/dateback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="29/09/2023"
+                android:textSize="20sp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Origem:"
+                android:textSize="20sp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/textOrigin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="São Paulo"
+                android:textSize="20sp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Destino:"
+                android:textSize="20sp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/textDestiny"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bahia"
+                android:textSize="20sp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Classificação:"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/textClassification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Classe Economica"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantidade:"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/textAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tipo da Viagem:"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/textType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ida e Volta"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>

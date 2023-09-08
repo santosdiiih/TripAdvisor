@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.NewTravel"
+    android:orientation="vertical"
+    android:background="@color/blue_ligth_one">
+
+    <include layout="@layout/toolbar"/>
+
+
+
+    <ImageView
+        android:id="@+id/imageTrip"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/galinha"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Origem"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Destino"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp">
+        <Spinner
+            android:id="@+id/spinnerOrigin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="10dp"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:textColor="@color/black"
+            android:entries="@array/estado"/>
+
+        <Spinner
+            android:id="@+id/spinnerDestiny"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:textColor="@color/black"
+            android:entries="@array/estado"/>
+
+    </LinearLayout>
+    <Spinner
+        android:id="@+id/spinnerType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Spinner.Underlined"
+        android:textColor="@color/black"
+        android:entries="@array/tipeTravel"
+        android:layout_margin="20dp"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
+
+        <CheckBox
+            android:id="@+id/CheckedGo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ida"
+            android:layout_weight="1"
+            style="@style/StyledTilEditText"
+            android:checked="false"
+            android:onClick="onCheckboxClicked"
+            />
+        <CheckBox
+            android:id="@+id/CheckeBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Volta"
+            android:layout_weight="1"
+            style="@style/StyledTilEditText"
+            android:onClick="onCheckboxClicked"/>
+
+        <CheckBox
+            android:id="@+id/CheckedTwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ida e Volta"
+            android:layout_weight="1"
+            style="@style/StyledTilEditText"
+            android:onClick="onCheckboxClicked"/>
+
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Data Ida"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        />
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint="Dia / Mes / Ano"
+        android:textColorHint="@color/black"
+        style="@style/StyledTilEditText">
+
+
+        <EditText
+            android:id="@+id/editTextGo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:inputType="date"
+            android:textColor="@color/black"
+            android:padding="10dp"
+            android:maxLength="20"
+            android:enabled="false"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Data Volta"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+
+        />
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint="Dia / Mes / Ano"
+        android:textColorHint="@color/black"
+        style="@style/StyledTilEditText">
+
+
+        <EditText
+            android:id="@+id/editTextBack"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:inputType="date"
+            android:textColor="@color/black"
+            android:padding="10dp"
+            android:maxLength="20"
+            android:enabled="false"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint="Quantidade de Passagens"
+        android:textColorHint="@color/black"
+        style="@style/StyledTilEditText">
+
+        <EditText
+            android:id="@+id/editTextAmount"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:padding="10dp"
+            android:maxLength="20"
+            android:layout_marginTop="20dp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enviar"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/purple_700"
+        android:textColor="@color/white"
+        android:layout_marginTop="30dp"/>
+</LinearLayout>
