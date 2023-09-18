@@ -1,31 +1,39 @@
 package com.example.tripadvisorboechat.view
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import android.widget.CheckBox
+import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.tripadvisorboechat.R
 import com.example.tripadvisorboechat.model.Travel
 import com.example.tripadvisorboechat.repository.TravelRepository
 import kotlinx.android.synthetic.main.activity_new_travel.*
 import kotlinx.android.synthetic.main.toolbar.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class NewTravel : AppCompatActivity(), View.OnClickListener {
 
     private val SALVAR: String = "Salvar";
     private val CANCELAR: String = "Cancelar";
     private val ERROR: String = "Error"
+    private var checked : Boolean = false
+    var typeTravel = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_travel)
 
         insertToolbar()
+        buttonEnviar.setOnClickListener(this)
 
     }
-
-    var typeTravel = ""
 
     private fun insertToolbar() {
         setSupportActionBar(toolbar)
@@ -33,10 +41,9 @@ class NewTravel : AppCompatActivity(), View.OnClickListener {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
     }
 
-
     fun onCheckboxClicked(view: View) {
         if (view is CheckBox) {
-            val checked: Boolean = view.isChecked
+             checked = view.isChecked
 
             when (view.id) {
                 R.id.CheckedGo -> {
@@ -96,12 +103,36 @@ class NewTravel : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    private fun validateForm() : Boolean{
+        if(checked && editTextAmount.text.toString().length > 0  ){
+           if(typeTravel == "Volta" && editTextBack.text.toString().length > 8){
+               return true
+           }
+           else if(typeTravel == "Ida" && editTextGo.text.toString().length > 8){
+                return true
+           }
+           else if(typeTravel == "Ida e Volta"){
+                if(editTextBack.text.toString().length > 8 && editTextGo.text.toString().length > 8){
+                    return true
+                }
+            }
+
+        }
+
+        return false
+    }
+
     override fun onClick(view: View) {
         if(view.id == R.id.toolbar){
             onBackPressed()
         }
-        if(view.id == R.id.buttonLogin){
-            saveTravel()
+        if(view.id == R.id.buttonEnviar){
+            if(validateForm()){
+                saveTravel()
+            }
+            else{
+                Toast.makeText(this, "Preencha as Informações da Viagem", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -109,14 +140,13 @@ class NewTravel : AppCompatActivity(), View.OnClickListener {
         val builderDialog = AlertDialog.Builder(this)
         when (call) {
             SALVAR -> {
-                builderDialog.setTitle("Usuario Cadastrado")
-                builderDialog.setMessage("Agora você já consegue fazer login na plataforma\n\n")
+                builderDialog.setTitle("Viagem Agendada")
+                builderDialog.setMessage("Sua Viagem foi Agendada com Sucesso\n\n")
                 builderDialog.setIcon(R.drawable.ic_baseline_done_24)
                 builderDialog.setPositiveButton("OK"){ _, _ ->
                     onBackPressed()
                 }
                 builderDialog.show()
-                //limparFormulario()
             }
             CANCELAR -> {
                 builderDialog.setTitle("Cancelar")
@@ -132,7 +162,7 @@ class NewTravel : AppCompatActivity(), View.OnClickListener {
             }
             ERROR -> {
                 builderDialog.setTitle("Erro ao salvar os dados")
-                builderDialog.setMessage("Sinto muito não foi possivel salvar seu cadastro\n\n Tente novamente mais tarde")
+                builderDialog.setMessage("Sinto muito não foi possivel salvar os dados da sua viagem\n\n Tente novamente mais tarde")
                 builderDialog.setIcon(R.drawable.ic_baseline_clear_30)
                 builderDialog.setPositiveButton("OK") { _, _ ->
                     onBackPressed()
@@ -140,5 +170,7 @@ class NewTravel : AppCompatActivity(), View.OnClickListener {
                 builderDialog.show()
             }
         }
+
     }
+
 }

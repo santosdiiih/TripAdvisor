@@ -62,7 +62,7 @@ class TravelRepository(context: Context) {
                     classification = cursor.getString(cursor.getColumnIndex(DatabaseDefinitions.Travel.Columns.CLASSIFICACAO)),
                     dateGo = cursor.getString(cursor.getColumnIndex(DatabaseDefinitions.Travel.Columns.DATA_IDA)),
                     dateBack = cursor.getString(cursor.getColumnIndex(DatabaseDefinitions.Travel.Columns.DATA_VOLTA)),
-                    amounttickets = cursor.getInt(cursor.getColumnIndex(DatabaseDefinitions.Travel.Columns.QTD_PASSAGENS)),
+                    amounttickets = cursor.getString(cursor.getColumnIndex(DatabaseDefinitions.Travel.Columns.QTD_PASSAGENS)),
                     typeTrip = cursor.getString(cursor.getColumnIndex(DatabaseDefinitions.Travel.Columns.TIPO_VIAGEM))
                 )
                 travels.add(travel)
@@ -106,7 +106,7 @@ class TravelRepository(context: Context) {
             travel.classification = cursor.getString(cursor.getColumnIndex(DatabaseDefinitions.Travel.Columns.CLASSIFICACAO))
             travel.dateGo = cursor.getString(cursor.getColumnIndex(DatabaseDefinitions.Travel.Columns.DATA_IDA))
             travel.dateBack = cursor.getString(cursor.getColumnIndex(DatabaseDefinitions.Travel.Columns.DATA_VOLTA))
-            travel.amounttickets = cursor.getInt(cursor.getColumnIndex(DatabaseDefinitions.Travel.Columns.QTD_PASSAGENS))
+            travel.amounttickets = cursor.getString(cursor.getColumnIndex(DatabaseDefinitions.Travel.Columns.QTD_PASSAGENS))
             travel.typeTrip = cursor.getString(cursor.getColumnIndex(DatabaseDefinitions.Travel.Columns.TIPO_VIAGEM))
         }
         else{

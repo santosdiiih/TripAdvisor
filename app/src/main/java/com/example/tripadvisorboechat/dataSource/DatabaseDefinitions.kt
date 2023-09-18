@@ -14,4 +14,15 @@ class DatabaseDefinitions {
             const val TIPO_VIAGEM = "typeTrip"
         }
     }
+
+    object User{
+        const val TABLE_NAME = "tblUser"
+        object Columns {
+            const val ID_USER = "idUser"
+            const val NOME = "nome"
+            const val EMAIL = "email"
+            const val CPF = "cpf"
+            const val PASSWORD = "password"
+        }
+    }
 }

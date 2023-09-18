@@ -6,12 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tripadvisorboechat.R
-import com.example.tripadvisorboechat.adapter.TripAdapter.*
 import com.example.tripadvisorboechat.model.Travel
 import com.example.tripadvisorboechat.view.DetailsTravelActivity
 import kotlinx.android.synthetic.main.card_trip.view.*
 
-class TripAdapter(var listTrip: ArrayList<Travel>) : RecyclerView.Adapter<TripAdapter.TripViewHolder>() {
+class TravelAdapter(var listTrip: ArrayList<Travel>) : RecyclerView.Adapter<TravelAdapter.TripViewHolder>() {
 
     class TripViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         fun bind(travel: Travel){

@@ -22,6 +22,8 @@
         <activity
             android:name=".view.Cadastre_se"
             android:exported="false" />
+        <activity android:name=".view.DetailsTravelActivity"
+            android:exported="false"/>
         <activity
             android:name=".view.LoginActivity"
             android:exported="true">

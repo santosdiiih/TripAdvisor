@@ -11,17 +11,13 @@
 
     <include layout="@layout/toolbar"/>
 
-
-
     <ImageView
         android:id="@+id/imageTrip"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/galinha"
+        android:src="@drawable/boechat_icon"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"/>
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -145,6 +141,7 @@
             android:padding="10dp"
             android:maxLength="20"
             android:enabled="false"
+
             />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -166,7 +163,6 @@
         android:textColorHint="@color/black"
         style="@style/StyledTilEditText">
 
-
         <EditText
             android:id="@+id/editTextBack"
             android:layout_width="match_parent"
@@ -179,7 +175,6 @@
             android:enabled="false"
             />
     </com.google.android.material.textfield.TextInputLayout>
-
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -204,7 +199,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/buttonLogin"
+        android:id="@+id/buttonEnviar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Enviar"
